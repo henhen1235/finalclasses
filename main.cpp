@@ -162,27 +162,32 @@ void dele(std::vector<media*>& vec) {
 
 void search(std::vector<media*>& vec) {
     char print[50];
-    int printyear;
-    cout << "Which media would you like to search for? Print out their title then in the next prompt print out their year(if there are multiples they will all be printed)" << endl;
+    cout << "What would you like to search with? Name or Year?" << endl;
     cin >> print;
-    cin >> printyear;
 
-    for (auto it = vec.begin(); it != vec.end(); it++){
-        if (strcmp((*it)->title, print) == 0 && (*it)->year == printyear){
-            char answer[15];
-            cout << "We have found " << (*it)->title << " do you want to delete it?" << endl;
-            cin >> answer;
-            if(strcmp(answer, "yes") == 0){
-                delete *it; 
-                vec.erase(it);
-            }
-            else{
-                cout << "It will not be deleten" << endl;
-                it++;
+    if(strcmp(print, "Name") == 0){
+        char name[50];
+        cout << "What is the name you would like to search with?" << endl;
+        cin >> name;
+        for (auto it = vec.begin(); it != vec.end(); it++){
+            if (strcmp((*it)->title, name) == 0){
+                cout << "We found " << name << " which was made in "<< (*it)->year << endl; 
             }
         }
-        else{
-            it++;
+    }
+    if(strcmp(print, "Year") == 0){
+        int i = 0;
+        int year;
+        cout << "What is the year you would like to search with?" << endl;
+        cin >> year;
+        for (auto it = vec.begin(); it != vec.end(); it++){
+            if ((*it)->year = year){
+                cout << "We found " << (*it)->year << " which was made in "<< year << endl; 
+                i = 10;
+            }
+        }
+        if(i == 0){
+            cout << "Nothing found" << endl;
         }
     }
 }
