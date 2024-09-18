@@ -1,6 +1,6 @@
 #include <iostream>
-#include "media.h"
 #include <cstring>
+#include "media.h"
 
 using namespace std;
 
@@ -14,4 +14,4 @@ class videogames : public media{
  public:
   char* publisher;
   float rating;
-}
+};

@@ -8,29 +8,29 @@ music::music(){
   publisher = new char[50];
 }
 
-movies::getpublisher(){
+char* music::getpublisher(){
   return publisher;
 }
 
-movies::getduration(){
+int music::getduration(){
   return duration;
 }
 
-movies::getartist(){
+char* music::getartist(){
   return artist;
 }
 
-movies::setpublisher(char* newpublisher){
+void music::setpublisher(char* newpublisher){
   delete[] publisher;
   publisher = new char[50];
   strcpy(publisher, newpublisher);
 }
 
-movies::setduration(int newduration){
+void music::setduration(int newduration){
   duration = newduration;
 }
 
-movies::setartist(char* newartist){
+void music::setartist(char* newartist){
   delete[] artist;
   artist = new char[50];
   strcpy(artist, newartist);

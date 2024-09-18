@@ -17,4 +17,4 @@ public:
   char* director;
   int time;
   float rating;
-}
+};

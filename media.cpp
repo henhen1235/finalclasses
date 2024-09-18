@@ -6,20 +6,20 @@ media::media(){
   title = new char[50];
 }
 
-media::setyear(int y){
+void media::setyear(int y){
   year = y;
 }
 
-media::setname(char* newtitle){
-x  title[] delete;
+void media::setname(char* newtitle){
+  delete[] title;
   title = new char[50];
-  strcpy(title, t);
+  strcpy(title, newtitle);
 }
 
-media::getyear(){
+int media::getyear(){
   return year;
 }
 
-media::getname(){
+char* media::getname(){
   return title;
 }

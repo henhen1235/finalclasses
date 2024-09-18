@@ -1,6 +1,6 @@
 #include <iostream>
 #include "videogames.h"
-#include <cstrings>
+#include <cstring>
 
 using namespace std;
 
@@ -8,20 +8,20 @@ videogames::videogames(){
   publisher = new char[50];
 }
 
-videogames::getpublisher(){
+char* videogames::getpublisher(){
   return publisher;
 }
 
-videogames::getrating(){
+float videogames::getrating(){
   return rating;
 }
 
-videogames::setpublisher(char* newpublisher){
+void videogames::setpublisher(char* newpublisher){
   delete[] publisher;
   publisher = new char[50];
   strcpy(publisher, newpublisher);
 }
 
-videogames::setrating(float newrating){
+void videogames::setrating(float newrating){
   rating = newrating;
 }

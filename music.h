@@ -17,4 +17,4 @@ class music : public media{
   char* artist;
   int duration;
   char* publisher;
-}
+};
