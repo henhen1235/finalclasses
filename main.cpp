@@ -68,15 +68,75 @@ void add(vector<media*> &medias){
             tempvideogame->setrating(rating);
 
             medias.push_back(tempvideogame);
+            break;
         }
         else if(strcmp(mediatype, "movies") == 0){
-            
+            movies* tempmovie = new movies;
+            char titles[50];
+            int year;
+            float rating;
+            char director[50];
+            int duration;
+
+            cout << "What is the title of the movie??" << endl;
+            cin >> titles;
+            tempmovie->setname(titles);
+            cout << "What is the release year of the movie?" << endl;
+            cin >> year;
+            tempmovie->setyear(year);
+            cout << "Who is the director of the movie?" << endl;
+            cin >> director;
+            tempmovie->setdirector(director);
+            cout << "What is the rating of the movie?" << endl;
+            cin >> rating;
+            tempmovie->setrating(rating);
+            cout<< "What is the duration of the movie?" << endl;
+            cin >> duration;
+            tempmovie->setduration(duration);
+
+            medias.push_back(tempmovie);
+            break;
         }
         if(strcmp(mediatype, "music") == 0){
-            
+            music* tempmusic = new music;
+            char titles[50];
+            int year;
+            char publisher[50];
+            char artist[50];
+            int duration;
+
+            cout << "What is the title of the song??" << endl;
+            cin >> titles;
+            tempmusic->setname(titles);
+            cout << "What is the release year of the song?" << endl;
+            cin >> year;
+            tempmusic->setyear(year);
+            cout << "Who is the publisher of the song?" << endl;
+            cin >> publisher;
+            tempmusic->setpublisher(publisher);
+            cout << "What is the duration of the song?" << endl;
+            cin >> duration;
+            tempmusic->setduration(duration);
+            cout<< "who is the artist of the song?" << endl;
+            cin >> artist;
+            tempmusic->setartist(artist);
+
+            medias.push_back(tempmusic);
+            break;
         }
         else{
             cout << "Please insert a valid media type, your options are:video games, movies, music" << endl;
         }
     }
+}
+
+void dele(std::vector<media*>& vec) {
+    vector<string>::iterator it;
+    for(it = vec.begin(); it != vec.end(); it++){
+
+    }
+}
+
+void search(std::vector<media*>& vec) {
+    // Implementation here
 }
