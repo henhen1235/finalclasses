@@ -66,6 +66,7 @@ void add(vector<media*> &medias){
             cout << "What is the rating of the video game?" << endl;
             cin >> rating;
             tempvideogame->setrating(rating);
+            cout << "Thanks for adding a video game" << endl;
 
             medias.push_back(tempvideogame);
             break;
@@ -93,6 +94,7 @@ void add(vector<media*> &medias){
             cout<< "What is the duration of the movie?" << endl;
             cin >> duration;
             tempmovie->setduration(duration);
+            cout << "Thanks for adding a movie" << endl;
 
             medias.push_back(tempmovie);
             break;
@@ -120,6 +122,7 @@ void add(vector<media*> &medias){
             cout<< "who is the artist of the song?" << endl;
             cin >> artist;
             tempmusic->setartist(artist);
+            cout << "Thanks for adding a song" << endl;
 
             medias.push_back(tempmusic);
             break;
@@ -131,12 +134,55 @@ void add(vector<media*> &medias){
 }
 
 void dele(std::vector<media*>& vec) {
-    vector<string>::iterator it;
-    for(it = vec.begin(); it != vec.end(); it++){
+    char del[50];
+    int delet;
+    cout << "Which media would you like to delete? Print out their title then in the next prompt print out their year(if there are multiples they will all be deleted)" << endl;
+    cin >> del;
+    cin >> delet;
 
+    for (auto it = vec.begin(); it != vec.end(); it++){
+        if (strcmp((*it)->title, del) == 0 && (*it)->year == delet){
+            char answer[15];
+            cout << "We have found " << (*it)->title << " do you want to delete it?" << endl;
+            cin >> answer;
+            if(strcmp(answer, "yes") == 0){
+                delete *it; 
+                vec.erase(it);
+            }
+            else{
+                cout << "It will not be deleten" << endl;
+                it++;
+            }
+        }
+        else{
+            it++;
+        }
     }
 }
 
 void search(std::vector<media*>& vec) {
-    // Implementation here
+    char print[50];
+    int printyear;
+    cout << "Which media would you like to search for? Print out their title then in the next prompt print out their year(if there are multiples they will all be printed)" << endl;
+    cin >> print;
+    cin >> printyear;
+
+    for (auto it = vec.begin(); it != vec.end(); it++){
+        if (strcmp((*it)->title, print) == 0 && (*it)->year == printyear){
+            char answer[15];
+            cout << "We have found " << (*it)->title << " do you want to delete it?" << endl;
+            cin >> answer;
+            if(strcmp(answer, "yes") == 0){
+                delete *it; 
+                vec.erase(it);
+            }
+            else{
+                cout << "It will not be deleten" << endl;
+                it++;
+            }
+        }
+        else{
+            it++;
+        }
+    }
 }

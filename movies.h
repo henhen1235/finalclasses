@@ -13,6 +13,10 @@ class movies : public media{
   virtual void setdirector(char* newdirector);
   virtual void setduration(int newtime);
   virtual void setrating(float newrating);
+  virtual ~movies(){
+    delete[] title;
+    delete[] director;
+  }
 public:
   char* director;
   int time;

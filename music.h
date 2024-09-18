@@ -13,6 +13,11 @@ class music : public media{
   virtual void setpublisher(char* newpublisher);
   virtual void setduration(int newduration);
   virtual void setartist(char* newartist);
+  virtual ~music(){
+    delete[] title;
+    delete[] publisher;
+    delete[] artist;
+  }
  public:
   char* artist;
   int duration;
