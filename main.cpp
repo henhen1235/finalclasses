@@ -166,15 +166,22 @@ void search(std::vector<media*>& vec) {
     cin >> print;
 
     if(strcmp(print, "Name") == 0){
+        int i = 0;
         char name[50];
         cout << "What is the name you would like to search with?" << endl;
         cin >> name;
         for (auto it = vec.begin(); it != vec.end(); it++){
             if (strcmp((*it)->title, name) == 0){
-                cout << "We found " << name << " which was made in "<< (*it)->year << endl; 
+                cout << "We found " << name << " which was made in "<< (*it)->year << endl;
+                i = 10; 
             }
         }
+        if(i == 0){
+            cout << "Nothing found" << endl;
+        }
     }
+
+
     if(strcmp(print, "Year") == 0){
         int i = 0;
         int year;
