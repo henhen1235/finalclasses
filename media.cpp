@@ -6,7 +6,7 @@ media::media(){
   title = new char[50];
 }
 
-void media::setyear(int y){
+void media::setyear(int y){//function for getting year
   year = y;
 }
 

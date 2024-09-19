@@ -10,7 +10,7 @@ Henry Xu
 9/17/24
 Making a list of media types and create function for them!
 */
-
+//get everything ready
 using namespace std;
 void add(vector<media*> &medias);
 void dele(vector<media*> &medias);
@@ -22,8 +22,10 @@ int main(){
 
     while(true){
         char answer[50];
+	// ask user what they would like to do
         cout << "What would you like to do?" << endl;
         cin >> answer;
+	//depending on what they would like run the right function
         if(strcmp(answer, "add") == 0){
             add(medias);
         }
@@ -34,7 +36,12 @@ int main(){
             search(medias);
         }
         else if(strcmp(answer, "quit") == 0){
-        }
+	   for (auto it = medias.begin(); it != medias.end(); it++) {
+	     delete *it; //clear everything in the classes
+            }
+            medias.clear();//clear the vector of pointers
+            break;
+	}
         else{
             cout << "This is not a proper command, please respond with: add, delete, search, quit." << endl;
         }
@@ -42,13 +49,14 @@ int main(){
     return 0;
 }
 
-
+//use this code to add a new media
 void add(vector<media*> &medias){
     while(true){
-        char mediatype[50];
+      char mediatype[50];//asking for media type
         cout << "What kind of media would you like to add?" << endl;
         cin >> mediatype;
-        if(strcmp(mediatype, "video games") == 0){
+	//if they want to add a video game
+        if(strcmp(mediatype, "video-game") == 0){
             videogames* tempvideogame = new videogames;
             char titles[50];
             int year;
@@ -71,7 +79,8 @@ void add(vector<media*> &medias){
             medias.push_back(tempvideogame);
             break;
         }
-        else if(strcmp(mediatype, "movies") == 0){
+	// if they want to add a movie
+        else if(strcmp(mediatype, "movie") == 0){
             movies* tempmovie = new movies;
             char titles[50];
             int year;
@@ -99,6 +108,7 @@ void add(vector<media*> &medias){
             medias.push_back(tempmovie);
             break;
         }
+	//if they want to add music
         if(strcmp(mediatype, "music") == 0){
             music* tempmusic = new music;
             char titles[50];
@@ -118,6 +128,7 @@ void add(vector<media*> &medias){
             tempmusic->setpublisher(publisher);
             cout << "What is the duration of the song?" << endl;
             cin >> duration;
+
             tempmusic->setduration(duration);
             cout<< "who is the artist of the song?" << endl;
             cin >> artist;
@@ -127,19 +138,22 @@ void add(vector<media*> &medias){
             medias.push_back(tempmusic);
             break;
         }
+	//if their command is invalid
         else{
-            cout << "Please insert a valid media type, your options are:video games, movies, music" << endl;
+            cout << "Please insert a valid media type, your options are:video-game, movie, music" << endl;
         }
     }
 }
 
+
+//deleting function
 void dele(std::vector<media*>& vec) {
     char del[50];
     int delet;
-    cout << "Which media would you like to delete? Print out their title then in the next prompt print out their year(if there are multiples they will all be deleted)" << endl;
+    cout << "Which media would you like to delete? Print out their title then in the next prompt print out their year." << endl;
     cin >> del;
     cin >> delet;
-
+    //go through the vector and delete the first matchin one they find
     for (auto it = vec.begin(); it != vec.end(); it++){
         if (strcmp((*it)->title, del) == 0 && (*it)->year == delet){
             char answer[15];
@@ -147,24 +161,25 @@ void dele(std::vector<media*>& vec) {
             cin >> answer;
             if(strcmp(answer, "yes") == 0){
                 delete *it; 
-                vec.erase(it);
+                it = vec.erase(it);
+		break;
             }
             else{
                 cout << "It will not be deleten" << endl;
-                it++;
             }
         }
         else{
-            it++;
         }
     }
 }
 
+//searching function
 void search(std::vector<media*>& vec) {
-    char print[50];
+  while(true){
+  char print[50];
     cout << "What would you like to search with? Name or Year?" << endl;
     cin >> print;
-
+    //if they want to search with name
     if(strcmp(print, "Name") == 0){
         int i = 0;
         char name[50];
@@ -175,26 +190,32 @@ void search(std::vector<media*>& vec) {
                 cout << "We found " << name << " which was made in "<< (*it)->year << endl;
                 i = 10; 
             }
-        }
+        }//print everything with the same name
         if(i == 0){
             cout << "Nothing found" << endl;
         }
+	break;
     }
 
-
-    if(strcmp(print, "Year") == 0){
+    //if they want to search with year
+    else if(strcmp(print, "Year") == 0){
         int i = 0;
         int year;
         cout << "What is the year you would like to search with?" << endl;
         cin >> year;
         for (auto it = vec.begin(); it != vec.end(); it++){
             if ((*it)->year = year){
-                cout << "We found " << (*it)->year << " which was made in "<< year << endl; 
+                cout << "We found " << (*it)->title << " which was made in "<< year << endl; 
                 i = 10;
             }
-        }
+        }//print everything with the same year
         if(i == 0){
             cout << "Nothing found" << endl;
         }
+	break;
     }
+    else{
+      cout << "This is not a valid option, please input: Name or Year." << endl;
+    }
+  }
 }

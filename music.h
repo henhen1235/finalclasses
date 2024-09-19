@@ -14,7 +14,6 @@ class music : public media{
   virtual void setduration(int newduration);
   virtual void setartist(char* newartist);
   virtual ~music(){
-    delete[] title;
     delete[] publisher;
     delete[] artist;
   }

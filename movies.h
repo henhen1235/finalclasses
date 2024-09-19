@@ -14,7 +14,6 @@ class movies : public media{
   virtual void setduration(int newtime);
   virtual void setrating(float newrating);
   virtual ~movies(){
-    delete[] title;
     delete[] director;
   }
 public:

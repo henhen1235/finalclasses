@@ -12,7 +12,6 @@ class videogames : public media{
   virtual void setpublisher(char* newpublisher);
   virtual void setrating(float newrating);
   virtual ~videogames(){
-    delete[] title;
     delete[] publisher;
   }
  public:
