@@ -1,27 +1,32 @@
-#include <iostream>
-#include "videogames.h"
-#include <cstring>
+#include <iostream> // include standard input-output library
+#include "videogames.h" // include the header file for the videogames class
+#include <cstring> // include c-string library for string manipulation
 
-using namespace std;
+using namespace std; // use the standard namespace
 
-videogames::videogames(){
-  publisher = new char[50];
+// constructor for the videogames class
+videogames::videogames() {
+    publisher = new char[50]; // allocate memory for the publisher attribute
 }
 
-char* videogames::getpublisher(){
-  return publisher;
+// function to get the publisher of the video game
+char* videogames::getpublisher() {
+    return publisher; // return the publisher attribute
 }
 
-float videogames::getrating(){
-  return rating;
+// function to get the rating of the video game
+float videogames::getrating() {
+    return rating; // return the rating attribute
 }
 
-void videogames::setpublisher(char* newpublisher){
-  delete[] publisher;
-  publisher = new char[50];
-  strcpy(publisher, newpublisher);
+// function to set the publisher of the video game
+void videogames::setpublisher(char* newpublisher) {
+    delete[] publisher; // deallocate previously allocated memory to prevent memory leak
+    publisher = new char[50]; // allocate new memory for the publisher attribute
+    strcpy(publisher, newpublisher); // copy the new publisher name into the publisher attribute
 }
 
-void videogames::setrating(float newrating){
-  rating = newrating;
+// function to set the rating of the video game
+void videogames::setrating(float newrating) {
+    rating = newrating; // assign the provided rating to the rating attribute
 }
