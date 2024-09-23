@@ -6,15 +6,15 @@ using namespace std;
 
 class videogames : public media{
  public:
-  videogames();
-  virtual char* getpublisher();
-  virtual float getrating();
-  virtual void setpublisher(char* newpublisher);
-  virtual void setrating(float newrating);
-  virtual ~videogames(){
+  videogames();//calling a new video game object
+  virtual char* getpublisher();//calling get publisher
+  virtual float getrating();//calling get rating
+  virtual void setpublisher(char* newpublisher);//calling set publishger
+  virtual void setrating(float newrating);//calling set rating
+  virtual ~videogames(){//deleting videogame items
     delete[] publisher;
   }
- public:
+public://public varriables
   char* publisher;
   float rating;
 };
