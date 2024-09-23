@@ -1,19 +1,19 @@
-#include <iostream> // include standard input-output library
-#include "media.h" // include media class header
-#include "movies.h" // include movies class header
-#include "music.h" // include music class header
-#include "videogames.h" // include video games class header
-#include <cstring> // include c-string library for string comparison
-#include <vector> // include vector library for dynamic array usage
+#include <iostream>
+#include "media.h"
+#include "movies.h" 
+#include "music.h"
+#include "videogames.h"
+#include <cstring>
+#include <vector>
+//import everything
 /*
 henry xu
 9/17/24
 making a list of media types and creating functions for them!
 */
 // get everything ready
-using namespace std; // using the standard namespace
+using namespace std; 
 
-// function prototypes for adding, deleting, and searching media
 void add(vector<media*> &medias);
 void dele(vector<media*> &medias);
 void search(vector<media*> &medias);
