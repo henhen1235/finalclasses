@@ -4,41 +4,34 @@
 
 using namespace std; // use the standard namespace
 
-// constructor for the music class
-music::music() {
-    publisher = new char[50]; // allocate memory for the publisher attribute
+music::music(){//calling a new music object
+  publisher = new char[50];
 }
 
-// function to get the publisher of the music
-char* music::getpublisher() {
-    return publisher; // return the publisher attribute
+char* music::getpublisher(){//getting the publisher
+  return publisher;
 }
 
-// function to get the duration of the music track
-int music::getduration() {
-    return duration; // return the duration attribute
+int music::getduration(){//getting the duration
+  return duration;
 }
 
-// function to get the artist of the music
-char* music::getartist() {
-    return artist; // return the artist attribute
+char* music::getartist(){//getting the artist
+  return artist;
 }
 
-// function to set the publisher of the music
-void music::setpublisher(char* newpublisher) {
-    delete[] publisher; // deallocate previously allocated memory to prevent memory leak
-    publisher = new char[50]; // allocate new memory for the publisher attribute
-    strcpy(publisher, newpublisher); // copy the new publisher name into the publisher attribute
+void music::setpublisher(char* newpublisher){//setting the publisher
+  delete[] publisher;
+  publisher = new char[50];
+  strcpy(publisher, newpublisher);
 }
 
-// function to set the duration of the music track
-void music::setduration(int newduration) {
-    duration = newduration; // assign the provided duration to the duration attribute
+void music::setduration(int newduration){//setting the duration
+  duration = newduration;
 }
 
-// function to set the artist of the music
-void music::setartist(char* newartist) {
-    delete[] artist; // deallocate previously allocated memory to prevent memory leak
-    artist = new char[50]; // allocate new memory for the artist attribute
-    strcpy(artist, newartist); // copy the new artist name into the artist attribute
+void music::setartist(char* newartist){//setting the artist
+  delete[] artist;
+  artist = new char[50];
+  strcpy(artist, newartist);
 }

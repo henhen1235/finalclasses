@@ -4,39 +4,32 @@
 
 using namespace std; // use the standard namespace
 
-// constructor for the movies class
-movies::movies() {
-    director = new char[50]; // allocate memory for the director attribute
+movies::movies(){//create a new movie object
+  director = new char[50];
 }
 
-// function to get the director's name
-char* movies::getdirector() {
-    return director; // return the director attribute
+char* movies::getdirector(){//get director
+  return director;
 }
 
-// function to get the duration of the movie
-int movies::getduration() {
-    return time; // return the duration (time) attribute
+int movies::getduration(){//get duration
+  return time;
 }
 
-// function to get the rating of the movie
-float movies::getrating() {
-    return rating; // return the rating attribute
+float movies::getrating(){//get rating
+  return rating;
 }
 
-// function to set the director's name
-void movies::setdirector(char* newdirector) {
-    delete[] director; // deallocate previously allocated memory to prevent memory leak
-    director = new char[50]; // allocate new memory for the director attribute
-    strcpy(director, newdirector); // copy the new director name into the director attribute
+void movies::setdirector(char* newdirector){//set up the director
+  delete[] director;
+  director = new char[50];
+  strcpy(director, newdirector);
 }
 
-// function to set the duration of the movie
-void movies::setduration(int newtime) {
-    time = newtime; // assign the provided duration to the time attribute
+void movies::setduration(int newtime){//set up the time
+  time = newtime;
 }
 
-// function to set the rating of the movie
-void movies::setrating(float newrating) {
-    rating = newrating; // assign the provided rating to the rating attribute
+void movies::setrating(float newrating){//set up the rating
+  rating = newrating;
 }

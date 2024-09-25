@@ -4,29 +4,24 @@
 
 using namespace std; // use the standard namespace
 
-// constructor for the videogames class
-videogames::videogames() {
-    publisher = new char[50]; // allocate memory for the publisher attribute
+videogames::videogames(){//calling a new video games object
+  publisher = new char[50];
 }
 
-// function to get the publisher of the video game
-char* videogames::getpublisher() {
-    return publisher; // return the publisher attribute
+char* videogames::getpublisher(){//getting publisher
+  return publisher;
 }
 
-// function to get the rating of the video game
-float videogames::getrating() {
-    return rating; // return the rating attribute
+float videogames::getrating(){//getting rating
+  return rating;
 }
 
-// function to set the publisher of the video game
-void videogames::setpublisher(char* newpublisher) {
-    delete[] publisher; // deallocate previously allocated memory to prevent memory leak
-    publisher = new char[50]; // allocate new memory for the publisher attribute
-    strcpy(publisher, newpublisher); // copy the new publisher name into the publisher attribute
+void videogames::setpublisher(char* newpublisher){//setting publisher
+  delete[] publisher;
+  publisher = new char[50];
+  strcpy(publisher, newpublisher);
 }
 
-// function to set the rating of the video game
-void videogames::setrating(float newrating) {
-    rating = newrating; // assign the provided rating to the rating attribute
+void videogames::setrating(float newrating){//setting publisher
+  rating = newrating;
 }
