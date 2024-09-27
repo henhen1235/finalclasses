@@ -11,9 +11,8 @@ class videogames : public media{
   virtual float getrating();//calling get rating
   virtual void setpublisher(char* newpublisher);//calling set publishger
   virtual void setrating(float newrating);//calling set rating
-  virtual ~videogames(){//deleting videogame items
-    delete[] publisher;
-  }
+  virtual ~videogames();
+  void print();//calling print
 public://public varriables
   char* publisher;
   float rating;

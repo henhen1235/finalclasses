@@ -13,9 +13,8 @@ class movies : public media{
   virtual void setdirector(char* newdirector);//calling set director
   virtual void setduration(int newtime);//calling set duration
   virtual void setrating(float newrating);//calling set rating
-  virtual ~movies(){//delete everything
-    delete[] director;
-  }
+  void print();//calling print
+  virtual ~movies();
 public://public varribales
   char* director;
   int time;

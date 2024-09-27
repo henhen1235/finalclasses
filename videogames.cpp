@@ -25,3 +25,11 @@ void videogames::setpublisher(char* newpublisher){//setting publisher
 void videogames::setrating(float newrating){//setting publisher
   rating = newrating;
 }
+
+videogames::~videogames(){
+  delete[] publisher;
+}
+
+void videogames::print(){
+  cout << "title: "<< title << endl << "year: "<< year << endl << "publisher: " << publisher << endl << "rating: " << rating << endl;
+}

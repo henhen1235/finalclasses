@@ -12,9 +12,8 @@ class media {
   virtual void setyear(int y);//callling set year
   virtual char* getname();//calling get name
   virtual void setname(char* newtitle);//calling set name
-  virtual ~media(){//deleting function
-    delete[] title;
-  }
+  virtual void print();//calling print function
+  virtual ~media();
  public:
   int year;//varriables that are available from this class
   char* title;

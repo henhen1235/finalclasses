@@ -37,7 +37,6 @@ void movies::setrating(float newrating){//set up the rating
 movies::~movies(){
     delete[] director;
 }
-
-void movies::print(){
-  cout << "title: "<< title << endl << "year: "<< year << endl << "director: " << director << endl << "rating: " << rating << endl <<"duration: " << time << endl;  
+void::print(){
+  cout << "director: " << director << endl << "rating: " << rating << "duration: " << duration << endl; 
 }

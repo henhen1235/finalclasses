@@ -35,3 +35,12 @@ void music::setartist(char* newartist){//setting the artist
   artist = new char[50];
   strcpy(artist, newartist);
 }
+
+music::~music(){
+    delete[] publisher;
+    delete[] artist;
+  }
+
+void music::print(){
+  cout << "title: "<< title << endl << "year: "<< year << endl << "publisher: " << publisher << endl << "artist: " << artist << endl << "duration: " << duration << endl;
+}

@@ -159,7 +159,7 @@ void dele(std::vector<media*>& vec) {
             char answer[15]; // buffer to store user confirmation
             cout << "We have found: " << endl;
        	    (*it)->print();
-	    cout << "Would you like to delete it?" << endl;
+	    cout << "would you like to delete it? (yes/no);" << endl;
             cin >> answer;
             if(strcmp(answer, "yes") == 0) { // if user confirms deletion
                 delete *it; // delete the media object
@@ -219,6 +219,12 @@ void search(std::vector<media*>& vec) {
             break; // exit the loop after searching
         }
         // if the user enters an invalid search option
+        else {
+            cout << "This is not a valid option, please input: Name or Year." << endl;
+        }
+    }
+}
+arch option
         else {
             cout << "This is not a valid option, please input: Name or Year." << endl;
         }

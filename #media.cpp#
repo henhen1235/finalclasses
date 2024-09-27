@@ -25,9 +25,4 @@ char* media::getname(){//function for getting name
   return title;
 }
 
-media::~media(){
-  delete[] title;
-}
-void media::print(){
-  cout << "Name: " << title<<endl << "year: " << year<< endl;
-}
+
